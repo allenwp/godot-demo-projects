@@ -473,6 +473,12 @@ size = Vector2i(350, 350)
 
 [node name="Node3D" parent="DemoScenes/DemoScene_output_max_linear_value/SubViewport" unique_id=1416688204 instance=ExtResource("8_ycdy4")]
 
+[node name="Sprite2D2" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=1284238580]
+visible = false
+position = Vector2(210, 250)
+scale = Vector2(1.36, 3.48)
+texture = SubResource("GradientTexture2D_cegan")
+
 [node name="ViewportSprite" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=234860266]
 position = Vector2(207, 248)
 texture = SubResource("ViewportTexture_efxa6")

@@ -4,8 +4,10 @@ extends MeshInstance3D
 
 var _base_color: Color
 var _animation_value: float = 0.0
-var _time_passed: float = 0.0
 
+
+func flash() -> void:
+	_animation_value = 1.0
 
 func _init() -> void:
 	_base_color = (get_active_material(0) as StandardMaterial3D).albedo_color
@@ -13,11 +15,6 @@ func _init() -> void:
 
 
 func _process(delta: float) -> void:
-	_time_passed += delta
-	if (_time_passed > 2.0):
-		_animation_value = 1.0;
-		_time_passed -= 2.0
-
 	_animation_value -= delta / fade_time
 	if (_animation_value < 0.0):
 		_animation_value = 0.0
