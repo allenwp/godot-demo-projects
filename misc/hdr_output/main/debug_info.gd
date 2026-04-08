@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 
 	text = ""
 	text += "Display Server supports HDR: %s\n" % ["No", "Yes"][int(DisplayServer.has_feature(DisplayServer.FEATURE_HDR_OUTPUT))]
-	text += "Rendering Device supports HDR: %s\n" % ["No", "Yes"][int(device_has_hdr)]
+	text += "Renderer supports HDR: %s\n" % ["No", "Yes"][int(device_has_hdr)]
 	text += "Window supports HDR: %s\n" % ["No", "Yes"][int(DisplayServer.window_is_hdr_output_supported(window.get_window_id()))]
 
 	if not DisplayServer.has_feature(DisplayServer.FEATURE_HDR_OUTPUT):

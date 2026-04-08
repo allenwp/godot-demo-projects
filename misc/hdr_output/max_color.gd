@@ -11,9 +11,17 @@ extends Node
 @export var use_luminance_for_limit: bool = true
 
 
-func _process(_delta: float) -> void:
-	var max_linear_value = get_window().get_output_max_linear_value()
+func _enter_tree() -> void:
+	var window: Window = get_window()
+	window.output_max_linear_value_changed.connect(_on_output_max_linear_value_changed)
+	_on_output_max_linear_value_changed(window.get_output_max_linear_value())
 
+
+func _exit_tree() -> void:
+	get_window().output_max_linear_value_changed.disconnect(_on_output_max_linear_value_changed)
+
+
+func _on_output_max_linear_value_changed(output_max_linear_value: float) -> void:
 	# Color must be linear-encoded to use math operations.
 	var linear_color = sdr_color.srgb_to_linear()
 
@@ -21,7 +29,7 @@ func _process(_delta: float) -> void:
 		if use_luminance_for_limit:
 			# First adjust the color to be as bright as the screen can present.
 			var max_rgb_value = maxf(linear_color.r, maxf(linear_color.g, linear_color.b))
-			linear_color *= max_linear_value / max_rgb_value
+			linear_color *= output_max_linear_value / max_rgb_value
 
 			# Apply the limit.
 			var original_luminance = linear_color.get_luminance()
@@ -30,13 +38,13 @@ func _process(_delta: float) -> void:
 		else:
 			# The math for limiting based on color component values and screen
 			# capabilities can be combined.
-			var limited_max_linear_value = minf(max_linear_value, linear_limit)
+			var limited_max_linear_value = minf(output_max_linear_value, linear_limit)
 			var max_rgb_value = maxf(linear_color.r, maxf(linear_color.g, linear_color.b))
 			linear_color *= limited_max_linear_value / max_rgb_value
 	else:
 		# No limit; scale the color to be as bright as the screen can present.
 		var max_rgb_value = maxf(linear_color.r, maxf(linear_color.g, linear_color.b))
-		linear_color *= max_linear_value / max_rgb_value
+		linear_color *= output_max_linear_value / max_rgb_value
 
 	# Undo changes to the alpha channel, which should not be modified.
 	linear_color.a = sdr_color.a
