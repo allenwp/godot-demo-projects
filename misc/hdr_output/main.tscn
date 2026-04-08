@@ -276,9 +276,9 @@ script = ExtResource("8_5vw27")
 [node name="BlackWhiteMax" type="Control" parent="." unique_id=1868827823]
 custom_minimum_size = Vector2(97.615, 0)
 anchors_preset = 0
-offset_left = 609.0
+offset_left = 601.0
 offset_top = 2.0
-offset_right = 869.0
+offset_right = 861.0
 offset_bottom = 77.0
 
 [node name="Label" type="Label" parent="BlackWhiteMax" unique_id=1432220451]
@@ -372,22 +372,22 @@ scenes = [NodePath("DemoScene_output_max_linear_value"), NodePath("DemoScene_Wor
 
 [node name="Tab" type="ColorRect" parent="DemoScenes" unique_id=261230258]
 layout_mode = 0
-offset_left = 564.0
+offset_left = 543.0
 offset_top = -61.0
 offset_right = 828.0
 color = Color(0.21568628, 0.21568628, 0.21568628, 1)
 
 [node name="OptionButton" type="OptionButton" parent="DemoScenes/Tab" unique_id=1332299268]
 layout_mode = 0
-offset_left = 15.0
+offset_left = 7.0
 offset_top = 28.0
-offset_right = 251.0
+offset_right = 277.0
 offset_bottom = 59.0
 selected = 0
 item_count = 4
-popup/item_0/text = "Output Max. Linear Value"
+popup/item_0/text = "Output Maximum Linear Value"
 popup/item_0/id = 0
-popup/item_1/text = "Lighting, Tonemap, Effects"
+popup/item_1/text = "Lighting, Tonemap, and Effects"
 popup/item_1/id = 1
 popup/item_2/text = "Color Sweep"
 popup/item_2/id = 2
@@ -396,9 +396,9 @@ popup/item_3/id = 3
 
 [node name="Label" type="Label" parent="DemoScenes/Tab" unique_id=1342427115]
 layout_mode = 0
-offset_left = 17.0
+offset_left = 9.0
 offset_top = 3.0
-offset_right = 116.0
+offset_right = 108.0
 offset_bottom = 26.0
 text = "Demo scene:"
 
@@ -409,7 +409,7 @@ offset_bottom = 570.0
 script = ExtResource("10_dg77c")
 
 [node name="Mountain" type="Node2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=1183547058]
-position = Vector2(448, 171)
+position = Vector2(462, 194)
 
 [node name="Sun" type="ColorRect" parent="DemoScenes/DemoScene_output_max_linear_value/Mountain" unique_id=347517105]
 offset_left = 73.0
@@ -420,6 +420,7 @@ color = Color(0.99215686, 0.7058824, 0.41568628, 1)
 script = ExtResource("13_ycdy4")
 sdr_color = Color(0.99215686, 0.7058824, 0.41568628, 1)
 linear_limit = 2.8
+metadata/_edit_use_anchors_ = true
 
 [node name="Mountain" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value/Mountain" unique_id=1827667879]
 texture_filter = 1
@@ -427,8 +428,16 @@ texture_repeat = 1
 position = Vector2(160, 120)
 texture = ExtResource("7_5vw27")
 
+[node name="Label" type="Label" parent="DemoScenes/DemoScene_output_max_linear_value/Mountain" unique_id=2106881228]
+offset_top = 241.0
+offset_right = 320.0
+offset_bottom = 264.0
+text = "Sunset artwork by Luis Zuno (Ansimuz)"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=88010316]
-position = Vector2(609, 77)
+position = Vector2(617, 110)
 texture = SubResource("GradientTexture2D_cegan")
 
 [node name="HDRLabel" type="Label" parent="DemoScenes/DemoScene_output_max_linear_value/Sprite2D" unique_id=1664078869]
@@ -475,7 +484,7 @@ offset_bottom = 569.0
 focus_mode = 2
 theme_override_fonts/mono_font = SubResource("SystemFont_7mycd")
 bbcode_enabled = true
-text = "The output maximum linear value should only be used to present colors directly to the screen without influencing surrounding colors, lighting, or effects. View the [url=\"https://docs.godotengine.org/en/stable/tutorials/rendering/hdr_output.html\"]manual page[/url] to learn more."
+text = "The output maximum linear value should only be used to present colors directly to the screen without tonemapping or influencing surrounding colors, lighting, or effects. View the [url=\"https://docs.godotengine.org/en/stable/tutorials/rendering/hdr_output.html\"]manual page[/url] to learn more."
 horizontal_alignment = 1
 selection_enabled = true
 drag_and_drop_selection_enabled = false
@@ -526,7 +535,6 @@ text = "1) Ensure [i]no[/i] Environment resources use SDR-only features:
 	- Adjustments: Color Correction
 
 2) Configure the [code]rendering/rendering_device/driver[/code] project setting to the following:
-	- macOS: metal
 	- iOS: metal
 	- Windows: d3d12
 
