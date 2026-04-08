@@ -429,10 +429,11 @@ position = Vector2(160, 120)
 texture = ExtResource("7_5vw27")
 
 [node name="Label" type="Label" parent="DemoScenes/DemoScene_output_max_linear_value/Mountain" unique_id=2106881228]
+offset_left = -5.0
 offset_top = 241.0
-offset_right = 320.0
+offset_right = 325.0
 offset_bottom = 264.0
-text = "Sunset artwork by Luis Zuno (Ansimuz)"
+text = "Mountain artwork by Luis Zuno (Ansimuz)"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

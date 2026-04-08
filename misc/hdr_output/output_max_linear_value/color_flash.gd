@@ -6,8 +6,10 @@ var _base_color: Color
 var _animation_value: float = 0.0
 var _time_passed: float = 0.0
 
-func _ready() -> void:
+
+func _init() -> void:
 	_base_color = (get_active_material(0) as StandardMaterial3D).albedo_color
+	set_process(true)
 
 
 func _process(delta: float) -> void:
