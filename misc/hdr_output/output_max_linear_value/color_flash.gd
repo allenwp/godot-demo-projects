@@ -9,6 +9,7 @@ var _animation_value: float = 0.0
 func flash() -> void:
 	_animation_value = 1.0
 
+
 func _init() -> void:
 	_base_color = (get_active_material(0) as StandardMaterial3D).albedo_color
 	set_process(true)

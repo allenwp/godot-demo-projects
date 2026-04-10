@@ -1,5 +1,6 @@
 extends VBoxContainer
 
+
 func _process(_delta: float) -> void:
 	var window: Window = get_window()
 	var adjustment_step_1 = 0.2

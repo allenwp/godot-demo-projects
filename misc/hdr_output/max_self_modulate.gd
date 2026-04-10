@@ -11,6 +11,7 @@ extends CanvasItem
 # value that the final color should have.
 @export var use_luminance_for_limit: bool = true
 
+
 func _enter_tree() -> void:
 	var window: Window = get_window()
 	window.output_max_linear_value_changed.connect(_on_output_max_linear_value_changed)
