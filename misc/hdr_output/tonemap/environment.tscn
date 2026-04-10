@@ -109,38 +109,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("NoiseTexture2D_tkka1")
-
-[node name="Label" type="Label" parent="." unique_id=1860946694]
-anchors_preset = -1
-anchor_left = 0.41015625
-anchor_top = 0.7368827
-anchor_right = 0.58984375
-anchor_bottom = 0.80632716
-offset_left = 44.5
-offset_top = 3.0517578e-05
-offset_right = -44.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(1, 1, 0.4834036, 1)
-theme_override_font_sizes/font_size = 32
-text = "Example Text"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="." unique_id=1530623982]
-anchors_preset = -1
-anchor_left = 0.3246528
-anchor_top = 0.82330245
-anchor_right = 0.6753472
-anchor_bottom = 0.8927469
-offset_left = 98.5
-offset_right = -98.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(1.8247963, 1.8247963, 0.9043261, 1)
-theme_override_font_sizes/font_size = 32
-text = "Example Text (Overbright)"
-metadata/_edit_use_anchors_ = true

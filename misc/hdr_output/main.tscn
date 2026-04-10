@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://berd34e1fxw6d" path="res://output_max_linear_value/3d_scene.tscn" id="8_ycdy4"]
 [ext_resource type="Script" uid="uid://ow74i072fx6r" path="res://max_self_modulate.gd" id="9_4c57u"]
 [ext_resource type="Gradient" uid="uid://dmjqvtj2hbr57" path="res://output_max_linear_value/backing_gradient.tres" id="9_vivmo"]
-[ext_resource type="Script" uid="uid://bb4pv67imdsne" path="res://environment/subviewport_scale.gd" id="10_dg77c"]
-[ext_resource type="PackedScene" uid="uid://c0wukesav63su" path="res://environment/environment.tscn" id="11_dg77c"]
+[ext_resource type="Script" uid="uid://bb4pv67imdsne" path="res://tonemap/subviewport_scale.gd" id="10_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c0wukesav63su" path="res://tonemap/environment.tscn" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://b6cwewu4wkvv5" path="res://setup_instructions/setup_instructions.gd" id="13_w48qg"]
 [ext_resource type="Script" uid="uid://dxtpfowo3fjm4" path="res://max_color.gd" id="13_ycdy4"]
 
@@ -39,7 +39,7 @@ font_names = PackedStringArray("Monospace")
 subpixel_positioning = 0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ycdy4"]
-viewport_path = NodePath("DemoScenes/DemoScene_WorldEnvironment/SubViewport")
+viewport_path = NodePath("DemoScenes/DemoScene_Tonemap/SubViewport")
 
 [node name="Control" type="Control" unique_id=1546781181]
 layout_mode = 3
@@ -368,7 +368,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.21568628, 0.21568628, 0.21568628, 1)
 script = ExtResource("6_272bh")
-scenes = [NodePath("DemoScene_output_max_linear_value"), NodePath("DemoScene_WorldEnvironment"), NodePath("DemoScene_ColorSweep"), NodePath("DemoScene_SetupInstructions")]
+scenes = [NodePath("DemoScene_output_max_linear_value"), NodePath("DemoScene_Tonemap"), NodePath("DemoScene_ColorSweep"), NodePath("DemoScene_SetupInstructions")]
 
 [node name="Tab" type="ColorRect" parent="DemoScenes" unique_id=261230258]
 layout_mode = 0
@@ -387,7 +387,7 @@ selected = 0
 item_count = 4
 popup/item_0/text = "Output Maximum Linear Value"
 popup/item_0/id = 0
-popup/item_1/text = "Lighting, Tonemap, and Effects"
+popup/item_1/text = "Tonemap, Lighting, and Effects"
 popup/item_1/id = 1
 popup/item_2/text = "Color Sweep"
 popup/item_2/id = 2
@@ -403,7 +403,6 @@ offset_bottom = 26.0
 text = "Demo scene:"
 
 [node name="DemoScene_output_max_linear_value" type="Control" parent="DemoScenes" unique_id=1640634166]
-visible = false
 anchors_preset = 0
 offset_right = 828.0
 offset_bottom = 570.0
@@ -495,7 +494,7 @@ text = "The output maximum linear value should only be used to present colors di
 horizontal_alignment = 1
 script = ExtResource("13_w48qg")
 
-[node name="DemoScene_WorldEnvironment" type="Control" parent="DemoScenes" unique_id=1160571939]
+[node name="DemoScene_Tonemap" type="Control" parent="DemoScenes" unique_id=1160571939]
 visible = false
 anchors_preset = 0
 offset_left = 99.0
@@ -504,7 +503,7 @@ offset_right = 139.0
 offset_bottom = 430.0
 script = ExtResource("10_dg77c")
 
-[node name="SubViewport" type="SubViewport" parent="DemoScenes/DemoScene_WorldEnvironment" unique_id=628806123]
+[node name="SubViewport" type="SubViewport" parent="DemoScenes/DemoScene_Tonemap" unique_id=628806123]
 own_world_3d = true
 handle_input_locally = false
 msaa_3d = 2
@@ -514,9 +513,9 @@ size = Vector2i(570, 570)
 size_2d_override = Vector2i(570, 570)
 size_2d_override_stretch = true
 
-[node name="Node3D" parent="DemoScenes/DemoScene_WorldEnvironment/SubViewport" unique_id=229028905 instance=ExtResource("11_dg77c")]
+[node name="Node3D" parent="DemoScenes/DemoScene_Tonemap/SubViewport" unique_id=229028905 instance=ExtResource("11_dg77c")]
 
-[node name="ViewportSprite" type="Sprite2D" parent="DemoScenes/DemoScene_WorldEnvironment" unique_id=448833630]
+[node name="ViewportSprite" type="Sprite2D" parent="DemoScenes/DemoScene_Tonemap" unique_id=448833630]
 position = Vector2(315, -105)
 texture = SubResource("ViewportTexture_ycdy4")
 
@@ -525,6 +524,7 @@ visible = false
 layout_mode = 0
 
 [node name="DemoScene_SetupInstructions" type="RichTextLabel" parent="DemoScenes" unique_id=660978631]
+visible = false
 layout_mode = 0
 offset_left = 7.0
 offset_top = 4.0
@@ -548,7 +548,7 @@ text = "1) Ensure [i]no[/i] Environment resources use SDR-only features:
 
 6) Turn on the [code]display/window/hdr/request_hdr_output[/code] project setting and enable [code]hdr_output_requested[/code] for all other Windows that should support HDR output.
 
-7) [Optional] Provide in-game settings for the player to adjust HDR brightness and maximum luminance by copying [code]in_game_hdr_settings[/code] from this demo to your project.
+7) [Optional] Provide in-game settings for the player by copying [code]in_game_hdr_settings[/code] from this demo to your project.
 
 View the [url=\"https://docs.godotengine.org/en/stable/tutorials/rendering/hdr_output.html\"]manual page[/url] to learn more about HDR output."
 context_menu_enabled = true
