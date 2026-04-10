@@ -21,6 +21,10 @@ config/icon="uid://bub2vw2rhfr6"
 window/hdr/request_hdr_output=true
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom="uid://mmyqtxxfyk7r"
+
 [rendering]
 
 rendering_device/driver.windows="d3d12"
