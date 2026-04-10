@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://ow74i072fx6r" path="res://max_self_modulate.gd" id="9_4c57u"]
 [ext_resource type="Gradient" uid="uid://dmjqvtj2hbr57" path="res://output_max_linear_value/backing_gradient.tres" id="9_vivmo"]
 [ext_resource type="Script" uid="uid://bb4pv67imdsne" path="res://tonemap/subviewport_scale.gd" id="10_dg77c"]
-[ext_resource type="PackedScene" uid="uid://c0wukesav63su" path="res://tonemap/environment.tscn" id="11_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c0wukesav63su" path="res://tonemap/tonemap.tscn" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://b6cwewu4wkvv5" path="res://setup_instructions/setup_instructions.gd" id="13_w48qg"]
 [ext_resource type="Script" uid="uid://dxtpfowo3fjm4" path="res://max_color.gd" id="13_ycdy4"]
 

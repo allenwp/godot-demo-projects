@@ -9,6 +9,7 @@ glow_levels/2 = 0.0
 glow_levels/3 = 0.8
 glow_levels/4 = 0.4
 glow_levels/5 = 0.1
+glow_blend_mode = 0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7l7or"]
 top_radius = 0.03
@@ -72,7 +73,7 @@ light_specular = 0.0
 environment = SubResource("Environment_dg77c")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1229274230]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0156713)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41110387, 3.0156713)
 fov = 45.0
 
 [node name="Lamp" type="MeshInstance3D" parent="." unique_id=321365129]
