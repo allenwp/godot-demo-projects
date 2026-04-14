@@ -17,7 +17,7 @@ func _init() -> void:
 
 func _process(delta: float) -> void:
 	_animation_value -= delta / fade_time
-	if (_animation_value < 0.0):
+	if _animation_value < 0.0:
 		_animation_value = 0.0
 
 	if _animation_value == 0.0:

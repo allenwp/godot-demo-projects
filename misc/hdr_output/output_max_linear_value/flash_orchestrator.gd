@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_time_passed += delta
-	if (_time_passed > time_between_flashes):
+	if _time_passed > time_between_flashes:
 		meshes[_mesh_index].flash()
 		_mesh_index += 1
 		if _mesh_index >= meshes.size():
