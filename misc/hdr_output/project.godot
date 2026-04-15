@@ -13,7 +13,7 @@ config_version=5
 config/name="HDR Output"
 config/description="This project showcases high dynamic range output in Godot, along with best practices."
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.6")
+config/features=PackedStringArray("4.7")
 config/icon="uid://bub2vw2rhfr6"
 
 [display]
