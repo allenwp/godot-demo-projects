@@ -490,7 +490,7 @@ offset_right = 828.0
 offset_bottom = 569.0
 theme_override_fonts/mono_font = SubResource("SystemFont_7mycd")
 bbcode_enabled = true
-text = "The output maximum linear value should only be used to present colors directly to the screen without tonemapping or influencing lighting, effects, or surrounding color. View the [url=\"https://docs.godotengine.org/en/latest/tutorials/rendering/hdr_output.html\"]manual page[/url] to learn more."
+text = "The output maximum linear value should only be used to present colors directly to the screen without tonemapping or influencing lighting, effects, or surrounding color. View the [url=https://docs.godotengine.org/en/latest/tutorials/rendering/hdr_output.html]manual page[/url] to learn more."
 horizontal_alignment = 1
 script = ExtResource("13_w48qg")
 
@@ -546,7 +546,7 @@ text = "1) Ensure [i]no[/i] Environment resources use SDR-only features:
 
 7) [Optional] Provide in-game settings for the player by copying [code]in_game_hdr_settings[/code] from this demo to your project.
 
-View the [url=\"https://docs.godotengine.org/en/latest/tutorials/rendering/hdr_output.html\"]manual page[/url] to learn more about HDR output."
+View the [url=https://docs.godotengine.org/en/latest/tutorials/rendering/hdr_output.html]manual page[/url] to learn more about HDR output."
 context_menu_enabled = true
 vertical_alignment = 1
 selection_enabled = true
