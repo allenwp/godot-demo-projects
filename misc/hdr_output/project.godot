@@ -28,5 +28,4 @@ theme/custom="uid://mmyqtxxfyk7r"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="mobile"
 viewport/hdr_2d=true
