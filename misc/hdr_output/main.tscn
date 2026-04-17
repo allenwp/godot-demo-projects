@@ -407,6 +407,8 @@ anchors_preset = 0
 offset_right = 828.0
 offset_bottom = 570.0
 script = ExtResource("10_dg77c")
+sub_viewport_initial_size = Vector2(350, 350)
+main_viewport_initial_size = Vector2(1152, 648)
 
 [node name="Sprite2D" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=88010316]
 position = Vector2(598, 107)
@@ -473,12 +475,6 @@ size = Vector2i(350, 350)
 
 [node name="Node3D" parent="DemoScenes/DemoScene_output_max_linear_value/SubViewport" unique_id=1416688204 instance=ExtResource("8_ycdy4")]
 
-[node name="Sprite2D2" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=1284238580]
-visible = false
-position = Vector2(210, 250)
-scale = Vector2(1.36, 3.48)
-texture = SubResource("GradientTexture2D_cegan")
-
 [node name="ViewportSprite" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=234860266]
 position = Vector2(222, 250)
 texture = SubResource("ViewportTexture_efxa6")
@@ -500,6 +496,8 @@ anchors_preset = 0
 offset_right = 828.0
 offset_bottom = 570.0
 script = ExtResource("10_dg77c")
+sub_viewport_initial_size = Vector2(828, 570)
+main_viewport_initial_size = Vector2(1152, 648)
 
 [node name="SubViewport" type="SubViewport" parent="DemoScenes/DemoScene_Tonemap" unique_id=628806123]
 own_world_3d = true
@@ -507,7 +505,7 @@ handle_input_locally = false
 msaa_3d = 2
 use_hdr_2d = true
 scaling_3d_scale = 2.0
-size = Vector2i(570, 570)
+size = Vector2i(828, 570)
 
 [node name="Node3D" parent="DemoScenes/DemoScene_Tonemap/SubViewport" unique_id=229028905 instance=ExtResource("11_dg77c")]
 
