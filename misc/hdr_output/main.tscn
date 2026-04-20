@@ -32,14 +32,14 @@ fill_from = Vector2(1, 0)
 fill_to = Vector2(0, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_efxa6"]
-viewport_path = NodePath("DemoScenes/DemoScene_output_max_linear_value/SubViewport")
+viewport_path = NodePath("DemoScenes/DemoScene_output_max_linear_value/MySubViewport")
 
 [sub_resource type="SystemFont" id="SystemFont_7mycd"]
 font_names = PackedStringArray("Monospace")
 subpixel_positioning = 0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ycdy4"]
-viewport_path = NodePath("DemoScenes/DemoScene_Tonemap/SubViewport")
+viewport_path = NodePath("DemoScenes/DemoScene_Tonemap/MySubViewport")
 
 [node name="Control" type="Control" unique_id=1546781181]
 layout_mode = 3
@@ -464,7 +464,7 @@ position = Vector2(606.5, 130.5)
 mesh = SubResource("QuadMesh_w48qg")
 texture = SubResource("GradientTexture2D_074og")
 
-[node name="SubViewport" type="SubViewport" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=1818848484]
+[node name="MySubViewport" type="SubViewport" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=1818848484]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
@@ -473,7 +473,7 @@ use_hdr_2d = true
 scaling_3d_scale = 2.0
 size = Vector2i(350, 350)
 
-[node name="Node3D" parent="DemoScenes/DemoScene_output_max_linear_value/SubViewport" unique_id=1416688204 instance=ExtResource("8_ycdy4")]
+[node name="Node3D" parent="DemoScenes/DemoScene_output_max_linear_value/MySubViewport" unique_id=1416688204 instance=ExtResource("8_ycdy4")]
 
 [node name="ViewportSprite" type="Sprite2D" parent="DemoScenes/DemoScene_output_max_linear_value" unique_id=234860266]
 position = Vector2(222, 250)
@@ -499,7 +499,7 @@ script = ExtResource("10_dg77c")
 sub_viewport_initial_size = Vector2(828, 570)
 main_viewport_initial_size = Vector2(1152, 648)
 
-[node name="SubViewport" type="SubViewport" parent="DemoScenes/DemoScene_Tonemap" unique_id=628806123]
+[node name="MySubViewport" type="SubViewport" parent="DemoScenes/DemoScene_Tonemap" unique_id=628806123]
 own_world_3d = true
 handle_input_locally = false
 msaa_3d = 2
@@ -507,7 +507,7 @@ use_hdr_2d = true
 scaling_3d_scale = 2.0
 size = Vector2i(828, 570)
 
-[node name="Node3D" parent="DemoScenes/DemoScene_Tonemap/SubViewport" unique_id=229028905 instance=ExtResource("11_dg77c")]
+[node name="Node3D" parent="DemoScenes/DemoScene_Tonemap/MySubViewport" unique_id=229028905 instance=ExtResource("11_dg77c")]
 
 [node name="ViewportSprite" type="Sprite2D" parent="DemoScenes/DemoScene_Tonemap" unique_id=448833630]
 position = Vector2(414, 285)

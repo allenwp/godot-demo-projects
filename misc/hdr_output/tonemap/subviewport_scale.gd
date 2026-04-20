@@ -2,7 +2,7 @@ extends Node
 
 @export var sub_viewport_initial_size: Vector2
 @export var main_viewport_initial_size: Vector2
-@onready var sub_viewport: SubViewport = $SubViewport
+@onready var sub_viewport: SubViewport = $MySubViewport
 @onready var viewport_sprite: Sprite2D = $ViewportSprite
 
 
