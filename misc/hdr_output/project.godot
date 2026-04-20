@@ -13,12 +13,11 @@ config_version=5
 config/name="HDR Output"
 config/description="This project showcases high dynamic range output in Godot, along with best practices."
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.7")
+config/features=PackedStringArray("4.6")
 config/icon="uid://bub2vw2rhfr6"
 
 [display]
 
-window/hdr/request_hdr_output=true
 window/stretch/mode="canvas_items"
 
 [gui]
@@ -28,4 +27,5 @@ theme/custom="uid://mmyqtxxfyk7r"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
 viewport/hdr_2d=true
