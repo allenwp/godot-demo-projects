@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c0wukesav63su"]
 
+[ext_resource type="Script" uid="uid://d2i1kn5pps4tv" path="res://tonemap/sphere_and_light.gd" id="1_ot7qo"]
 [ext_resource type="PackedScene" uid="uid://bijyfxd7bo21v" path="res://output_max_linear_value/geodesic-sphere.glb" id="2_ot7qo"]
 [ext_resource type="Script" uid="uid://8fnkvv7j1nwv" path="res://output_max_linear_value/rotate.gd" id="3_rg21v"]
 
@@ -55,12 +56,13 @@ clearcoat_enabled = true
 clearcoat_roughness = 0.31
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6i5d"]
-albedo_color = Color(0.29000038, 0.38433683, 0.41855088, 1)
+albedo_color = Color(0.22350419, 0.25080395, 0.26138347, 1)
+metallic = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot7qo"]
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission = Color(0, 1, 0, 1)
+emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 6.38
 
 [sub_resource type="Animation" id="Animation_m6i5d"]
@@ -117,6 +119,7 @@ light_energy = 13.444
 shadow_enabled = true
 spot_range = 6.91
 spot_angle = 29.37
+spot_angle_attenuation = 0.3077856
 
 [node name="ground" type="MeshInstance3D" parent="." unique_id=407017710]
 transform = Transform3D(5.0484633, -2.9802322e-08, 0, 0, 0.9999999, 0, 1.4210855e-14, 3.5527137e-15, 6.078054, 0, 0, 0)
@@ -139,9 +142,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s1otk")
 
 [node name="SphereAndLight" type="Node3D" parent="." unique_id=1110493003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9473517, 1.130393, 0.053055763)
+script = ExtResource("1_ot7qo")
+color_speed = 0.02
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SphereAndLight" unique_id=1295079564]
 light_color = Color(0, 1, 0, 1)
+light_energy = 1.64
 shadow_enabled = true
 
 [node name="geodesic-sphere" parent="SphereAndLight" unique_id=1021905098 instance=ExtResource("2_ot7qo")]
